@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Vigyázz...</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="main.css"/> 
+</head>
+<body>
+    <script>
+        function addText() {
+            maindiv.appendChild(maindiv.firstElementChild.cloneNode(true));
+        }
+    </script>
+    <div id="maindiv" onclick="addText()">
+        <h1>Simple text</h1>
+    </div>
+</body>
+</html>

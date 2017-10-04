@@ -15,6 +15,7 @@ body table tr th {
     height: 50px;
     overflow: hidden;
     margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 #maindiv {
@@ -49,6 +50,7 @@ body table tr th {
 .navigationbutton:hover {
     background-color: #00cf00;
     background: -webkit-linear-gradient(#3a3a3a, white);
+    background: -moz-linear-gradient(#3a3a3a, white);
     cursor: pointer;
 }
 

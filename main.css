@@ -1,8 +1,24 @@
-body table tr th {
+body {
     font-family: Arial;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
 }
+
+th {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+tr {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+table {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
 
 #navigationbar {
     background-color: #00af00;
@@ -64,6 +80,8 @@ body table tr th {
 }
 
 a {
-    font-style: normal;
-    text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+	font-style: normal;
+	text-decoration: none;
 }

@@ -1,17 +1,13 @@
-﻿body {
+body table tr th {
     font-family: Arial;
     margin: 0px, 0px, 0px, 0px;
-    margin-left: 0px;
-}
-
-table tr th {
     padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
 }
 
 #navigationbar {
     background-color: #00af00;
     background: -webkit-linear-gradient(grey, white);
+    background: -moz-linear-gradient(grey, white);    
     position:fixed;
     display: block;
     top: 0px;

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Feladatok</title>
+    <meta charset="utf-8" lang="hu" />
+    <link type="text/css" rel="stylesheet" href="/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function LoadNaviBar() {
+            $("#navigationbar").load("/GlobalNaviBar.html#navigationbar")
+        });
+    </script>
+</head>
+<body>
+    <script>
+        function feladat5() {
+            var Num = [Num1.value, Num2.value, Num3.value, Num4.value, Num5.value];
+            textout1.innerHTML = "A számok összege: " + Num.reduce(add).toString() + "<br>" +
+                "A számok szorzata: " + Num.reduce(multiply).toString();
+        }
+
+        function add(x, y) {
+            return parseInt(x) + parseInt(y);
+        }
+
+        function multiply(x, y) {
+            return x * y;
+        }
+
+        function SquareRoot() {
+            textout2.innerText = Math.sqrt(parseInt(input6.value));
+        }
+    </script>
+    <div id="navigationbar"></div>
+    <div id="maindiv">
+
+        <div class="titletext">
+            <h1>Feladatok</h1>
+        </div>
+        <div class="feladatdiv">
+            <div class="feladattitletext">
+                <h2>5. feladat</h2>
+            </div>
+            <div>Számok:</div><br />
+            <div>
+                <input type="number" id="Num1" />
+                <input type="number" id="Num2" />
+                <input type="number" id="Num3" />
+                <input type="number" id="Num4" />
+                <input type="number" id="Num5" />
+
+                <button onclick="feladat5()">Számolj!</button>
+                <p id="textout1"> </p>
+            </div>
+        </div>
+        <div class="feladatdiv">
+            <div class="feladattitletext">
+                <h2>6. feladat</h2>
+            </div>
+            <div>
+                <input type="number" id="input6" />
+                <button onclick="SquareRoot()">Négyzetgyök!</button>
+                <p id="textout2"> </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

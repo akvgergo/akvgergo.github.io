@@ -124,3 +124,15 @@ a {
     background-color: #aaaaaa;
     cursor: pointer;
 }
+
+.feladatdiv {
+    border:2px dotted red;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    width:400px;
+    height:auto;
+}
+
+.feladattitletext {
+    color: #3c3c3c;
+}

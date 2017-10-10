@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Team X csapatoldal</title>
+    <meta charset="utf-8" lang="hu" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function LoadNaviBar() {
+            $("#navigationbar").load("/GlobalNaviBar.html#navigationbar")
+        });
+    </script>
+</head>
+<body>
+    <script>
+        function isleapyear() {
+            var year = parseInt(yearbox.value);
+            
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        output1.textContent = "Igen!";
+                        return;
+                    }
+                    output1.textContent = "Nem!";
+                    return;
+                }
+                output1.textContent = "Igen!";
+                return;
+            }
+            output1.textContent = "Nem!";
+        }
+
+        function minmax() {
+            var Num = [parseInt(Num1.value), parseInt(Num2.value), parseInt(Num3.value)];
+
+            var sum = 0;
+            for (var i = 0; i < Num.length; i++) {
+                sum += Num[i];
+            }
+            var avg = sum / Num.length;
+
+            output2.innerHTML = "Legkissebb: " + Num.reduce(Min) + "<br>" +
+                "Legnagyobb: " + Num.reduce(Max) + "<br>" +
+                "Átlag: " + avg;
+
+        }
+
+        function Min(x, y) {
+            return x > y ? y : x;
+        }
+        
+        function Max(x, y) {
+            return x < y ? y : x;
+        }
+
+    </script>
+    <div id="navigationbar"></div>
+    <div id="maindiv">
+
+        <div class="titletext">
+            <h1>Feladatok</h1>
+        </div>
+
+        <div class="feladatdiv">
+            <div class="feladattitletext"><h2>10. Feladat</h2></div>
+            <input type="number" id="yearbox" />
+            <button onclick="isleapyear()">Szökőév?</button>
+            <p id="output1"> </p>
+        </div>
+
+        <div class="feladatdiv">
+            <div class="feladattitletext"><h2>11. Feladat</h2></div>
+            <input type="number" id="Num1" />
+            <input type="number" id="Num2" />
+            <input type="number" id="Num3" />
+            <button onclick="minmax()">Számolj!</button>
+            <p id="output2"> </p>
+        </div>
+
+    </div>
+</body>
+</html>

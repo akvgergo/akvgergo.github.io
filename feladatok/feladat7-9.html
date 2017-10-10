@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Feladatok</title>
+    <meta charset="utf-8" lang="hu" />
+    <link type="text/css" rel="stylesheet" href="/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function LoadNaviBar() {
+            $("#navigationbar").load("/GlobalNaviBar.html#navigationbar")
+        });
+    </script>
+</head>
+<body>
+    <script>
+        function horizontally() {
+            output1.innerText = Math.floor(40 / parseInt(height.value)) * Math.floor(50 / parseInt(width.value))
+        }
+
+        function vertically() {
+            output1.innerText = Math.floor(50 / parseInt(height.value)) * Math.floor(40 / parseInt(width.value))
+        }
+
+        function calcHaromszog() {
+            var kerulet = parseInt(aoldal.value) + parseInt(boldal.value) + parseInt(coldal.value);
+            output2.innerHTML = "A oldal: " + (kerulet / 2 - parseInt(aoldal.value)).toString() + "<br>" +
+                "B oldal: " + (kerulet / 2 - parseInt(boldal.value)).toString() + "<br>" +
+                "C oldal: " + (kerulet / 2 - parseInt(coldal.value)).toString();
+        }
+
+        function roppalya() {
+            var grav = 9.81;
+            var velocity = parseFloat(ero.value);
+            var angle = parseFloat(szog.value);
+
+            output3.innerHTML = "Maximum magasság: " + (Math.pow(velocity, 2) * (Math.pow(Math.sin(angle * Math.PI / 180), 2) * (180 / Math.PI))) / (grav * 2) + " méter<br>" +
+                "Maximum távolság: " + (Math.pow(velocity, 2) / (2 * grav)) * (Math.sin(2 * (angle * Math.PI / 180)) * (180 / Math.PI)) + " méter";
+        }
+
+    </script>
+    <div id="navigationbar"></div>
+    <div id="maindiv">
+        <div class="titletext">
+            <h1>Feladatok</h1>
+        </div>
+
+        <div class="feladatdiv">
+            <div class="feladattitletext">
+                <h2>7. feladat</h2>
+            </div>
+            <div>Hány kissebb papírt tudunk kivágni egy 40*50 cm-es lapból?</div>
+            <div>
+                <span>Szélesség:<input type="number" id="width" />cm</span><br />
+                <span>Magasság:<input type="number" id="height" />cm</span><br />
+                <button onclick="horizontally()">Vízszintesen?</button>
+                <button onclick="vertically()">Függőlegesen?</button><br />
+                <p id="output1"> </p>
+            </div>
+        </div>
+
+        <div class="feladatdiv">
+            <div class="feladattitletext">
+                <h2>8. feladat</h2>
+            </div>
+            <div>A háromszög oldalainak hossza:</div><br />
+            <input type="number" id="aoldal" /><br />
+            <input type="number" id="boldal" /><br />
+            <input type="number" id="coldal" /><br />
+            <button onclick="calcHaromszog()">Számolj!</button>
+            <p id="output2"> </p>
+        </div>
+
+        <div class="feladatdiv">
+            <div class="feladattitletext">
+                <h2>9. feladat</h2>
+            </div>
+            <span> Szög:<input type="number" id="szog" />°</span><br />
+            <span> Sebesség:<input type="number" id="ero" />m/s</span><br />
+            <button onclick="roppalya()">Számolj!</button>
+            <p id="output3"> </p>
+        </div>
+
+    </div>
+</body>
+</html>

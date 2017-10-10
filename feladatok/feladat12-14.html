@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Team X csapatoldal</title>
+    <meta charset="utf-8" lang="hu" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function LoadNaviBar() {
+            $("#navigationbar").load("/GlobalNaviBar.html#navigationbar")
+        });
+    </script>
+</head>
+<body>
+    <script>
+        function calcdivisors() {
+            var N = parseInt(input1.value);
+            var max = N / 2;
+
+            output1.innerHTML = "";
+            for (var i = 1; i <= max; i++) {
+                if (N % i == 0) {
+                    output1.innerHTML += i.toString() + ", ";
+                }
+            }
+        }
+
+        function genrandom() {
+            var Num = new Array(20);
+
+            var Sum = 0;
+            for (var i = 0; i < Num.length; i++) {
+                Num[i] = Math.floor(Math.random() * 101)
+                Sum += Num[i];
+            }
+
+            output2.innerHTML = "";
+
+            for (var i = 0; i < Num.length; i++) {
+                output2.innerHTML += Num[i].toString() + "   ";
+                if (i % 2 == 1) {
+                    output2.innerHTML += "<br>";
+                }
+            }
+            output2.innerHTML += "Összegük: " + Sum;
+        }
+    </script>
+    <div id="navigationbar"></div>
+    <div id="maindiv">
+        <div class="titletext">
+            <h1>Feladatok</h1>
+        </div>
+
+        <div class="feladatdiv">
+            <div class="feladattitletext">
+                <h2>12. Feladat</h2>
+            </div>
+            <div>
+                <input type="number" id="input1" />
+                <button onclick="calcdivisors()">Osztók?</button>
+                <p id="output1"> </p>
+            </div>
+        </div>
+
+        <div class="feladatdiv">
+            <div class="feladattitletext">
+                <h2>13. Feladat</h2>
+            </div>
+            <div>
+                <span>Véletlen számok:</span><br />
+                <button onclick="genrandom()"> Számolj!</button>
+                <p id="output2"> </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
- body {
+body {
     background-color: #f0f0f0;
     font-family: Arial;
     margin: 0px 0px 0px 0px;
@@ -19,7 +19,6 @@ th, tr, table {
     top: 0px;
     width: 100%;
     height: 60px;
-    overflow: hidden;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
 }
@@ -54,11 +53,31 @@ th, tr, table {
     -webkit-tap-highlight-color: aqua;
 }
 
+.navigationbuttondropdown {
+    height: 100%;
+    width: auto;
+    vertical-align: middle;
+    padding: 0px 0px 0px 0px;
+    -webkit-tap-highlight-color: aqua;
+}
+
+
 .navigationbutton:hover {
     background-color: #aaaaaa;
     background: -webkit-linear-gradient(#3a3a3a, white);
     background: -moz-linear-gradient(#3a3a3a, white);
     cursor: pointer;
+}
+
+.navigationbuttondropdown:hover {
+    background-color: #aaaaaa;
+    background: -webkit-linear-gradient(#3a3a3a, white);
+    background: -moz-linear-gradient(#3a3a3a, white);
+    cursor: pointer;
+}
+
+.navigationbuttondropdown:hover #feladatokmenu {
+    display: block;
 }
 
 .navigationbuttontext {
@@ -73,6 +92,7 @@ th, tr, table {
 }
 
 a {
+    color: blue;
     padding: 0px;
     margin: 0px;
     font-style: normal;
@@ -81,9 +101,26 @@ a {
 
 #feladatokmenu {
     display: none;
-    position:absolute;
+    position: absolute;
+    height: auto;
+    width: inherit;
+    z-index: 1;
 }
 
-#navigationbuttondropdown:hover #feladatokmenu {
-    display:block;
+.dropdownlink {
+    padding: 6px 6px 6px 6px;
+    color: black;
+    background-color: #f0f0f0;
+    display: block;
+    width:100%;
+    height:auto;
+    font-size: 24px;
+    border: solid;
+    border-width: 1px;
+    border-color: #d0d0d0;
+}
+
+.dropdownlink:hover {
+    background-color: #aaaaaa;
+    cursor: pointer;
 }

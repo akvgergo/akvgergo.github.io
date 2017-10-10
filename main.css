@@ -27,6 +27,7 @@ th, tr, table {
     color: #3c3c3c;
     margin-left: 40px;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .titletext {
@@ -37,6 +38,7 @@ th, tr, table {
 .paragraph {
     color: #525252;
     font-size: 20px;
+    max-width:1200px;
 }
 
 #navigationtable {
@@ -97,6 +99,18 @@ a {
     margin: 0px;
     font-style: normal;
     text-decoration: none;
+}
+
+.csapattagdiv {
+    padding: 20px;
+    margin: 20px;
+    max-width: 800px;
+    text-align: left;
+}
+
+.bemutatokep {
+    padding: 20px;
+    height: 300px;
 }
 
 #feladatokmenu {

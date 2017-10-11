@@ -101,6 +101,10 @@ a {
     text-decoration: none;
 }
 
+.externallink:after {
+    content: url(/images/linkicon.png);
+}
+
 .csapattagdiv {
     padding: 20px;
     margin: 20px;

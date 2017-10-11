@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Képnézegető</title>
+    <meta charset="utf-8" lang="hu" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/imageViewer.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/clock.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function LoadNaviBar() {
+            $("#navigationbar").load("/GlobalNaviBar.html#navigationbar")
+        });
+
+        function increment() {
+            var time = parseInt(counter.textContent) + 1;
+
+            counter.textContent = time;
+
+            if (time % 10 == 0) {
+                var digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += digits[Math.floor(Math.random() * 16)];
+                }
+                counter.style.color = color;
+            }
+        }
+
+        var timer = setInterval(increment, 1000);
+    </script>
+</head>
+<body>
+    <div id="navigationbar"></div>
+    <div id="maindiv">
+        <h1 class="feladattitletext">Számláló</h1>
+        <h1 id="counter">0</h1>
+    </div>
+</body>
+</html>

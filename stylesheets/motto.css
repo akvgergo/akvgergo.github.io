@@ -1,0 +1,60 @@
+﻿#maindiv {
+    text-align: center;
+}
+
+#wrapper {
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+}
+
+#outerwrapper {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    right: 25%;
+    display: inline-block;
+}
+
+#mottotext {
+    display: inline-block;
+    font-size: 60px;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: textanimation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes textanimation {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        color: red;
+    }
+
+    25% {
+        -webkit-transform: translate3d(-25%, 0, 0);
+        transform: translate3d(-25%, 0, 0);
+        color: yellow;
+    }
+
+    50% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
+        color: green;
+    }
+
+    75% {
+        -webkit-transform: translate3d(-75%, 0, 0);
+        transform: translate3d(-75%, 0, 0);
+        color: blue;
+    }
+
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        color: red;
+    }
+}

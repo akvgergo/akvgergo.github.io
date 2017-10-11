@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Műszerfal</title>
+    <meta charset="utf-8" lang="hu" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function LoadNaviBar() {
+            $("#navigationbar").load("/GlobalNaviBar.html#navigationbar")
+        });
+
+        var fuellevel = 60;
+        var speedvar = 0;
+        var gearboxvar = 0;
+        var rpmvar = 0
+
+        function updatefuel() {
+            fuellevel -= Math.pow(rpmvar, 1.05) / 100000;
+            fueltank.innerText = fuellevel.toFixed(3);
+        }
+
+        function changespeed(x) {
+            speedvar += x;
+
+            if (gearboxvar == 0) changegb(1);
+            if (speedvar < 0) speed = 0;
+            if (speedvar > 250) speedvar = 250;
+
+            updaterpm();
+            speedometer.innerText = speedvar;
+        }
+
+        function changegb(x) {
+            gearboxvar += x;
+
+            if (gearboxvar > 6) gearboxvar = 6;
+            if (gearboxvar < 0) gearboxvar = 0;
+
+            updaterpm()
+            gearbox.innerText = gearboxvar;
+        }
+
+        function updaterpm() {
+            rpmvar = speedvar * 35 * (1 - gearboxvar / 10)
+            rpm.innerText = rpmvar.toFixed(0);
+        }
+
+        function filltank() {
+            fuellevel = 60;
+        }
+
+        var timer = setInterval(updatefuel, 100);
+    </script>
+</head>
+<body>
+    <script>
+        
+    </script>
+    <div id="navigationbar"></div>
+    <div id="maindiv">
+        <table id="container">
+            <tr>
+                <th><span id="speedometer" class="component">0</span></th>
+                <th><span id="rpm" class="component">0</span></th>
+                <th><span id="gearbox" class="component">0</span></th>
+                <th><span id="fueltank" class="component">60</span></th>
+            </tr>
+            <tr>
+                <th>
+                    <button onclick="changespeed(10)">+10 km/h</button>
+                </th>
+                <th></th>
+                <th>
+                    <button onclick="changegb(1)">+1</button>
+                </th>
+                <th>
+                    <button onclick="filltank()">Feltöltés</button>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <button onclick="changespeed(-10)">-10 km/h</button>
+                </th>
+                <th></th>
+                <th>
+                    <button onclick="changegb(-1)">-1</button>
+                </th>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>

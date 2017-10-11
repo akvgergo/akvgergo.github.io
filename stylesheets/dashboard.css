@@ -1,0 +1,47 @@
+﻿#maindiv {
+
+}
+
+#container {
+    margin-top:150px;
+    text-align:center;
+    align-content:center;
+    align-self:center;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.component {
+    min-width: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#speedometer:before {
+    content: "Sebesség:";
+}
+
+#rpm:before {
+    content: "Fordulatszám:";
+}
+
+#gearbox:before{
+    content: "Sebváltó:";
+}
+
+#fueltank:before{
+    content: "Üzemanyag:";
+}
+
+#speedometer:after {
+    content: "km/h";
+}
+
+#rpm:after {
+    content: "rpm";
+}
+
+#fueltank:after {
+    content: "/60 Liter";
+}

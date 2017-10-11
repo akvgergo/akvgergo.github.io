@@ -1,0 +1,17 @@
+﻿#maindiv {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.thumbnail {
+    height: 100px;
+}
+
+.thumbnail:hover {
+    cursor: pointer;
+}
+
+#mainimage {
+    width: 80%;
+    align-self:center;
+}

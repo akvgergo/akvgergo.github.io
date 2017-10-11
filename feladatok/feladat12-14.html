@@ -44,6 +44,24 @@
             }
             output2.innerHTML += "Összegük: " + Sum;
         }
+
+        function searchperfect() {
+            output3.innerHTML = "";
+
+            for (var i = 2; i < 10000; i++) {
+                var sum = 0;
+                var max = i / 2
+                for (var j = 1; j <= max; j++) {
+                    if (i % j == 0) {
+                        sum += j;
+                    }
+                }
+                if (sum == i) {
+                    output3.innerHTML += i.toString() + "<br>";
+                }
+            }
+        }
+
     </script>
     <div id="navigationbar"></div>
     <div id="maindiv">
@@ -72,6 +90,17 @@
                 <p id="output2"> </p>
             </div>
         </div>
+
+        <div class="feladatdiv">
+            <div class="feladattitletext">
+                <h2>14. Feladat</h2>
+            </div>
+            <div>
+                <button onclick="searchperfect()"> Számolj!</button>
+                <p id="output3"> </p>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>

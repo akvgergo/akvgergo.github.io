@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Team X csapatoldal</title>
+    <meta charset="utf-8" lang="hu" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/imageViewer.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function LoadNaviBar() {
+            $("#navigationbar").load("/GlobalNaviBar.html#navigationbar")
+        });
+    </script>
+</head>
+<body>
+    <script>
+        function chooseImage() {
+            mainimage.src = event.target.src;
+        }
+    </script>
+    <div id="navigationbar"></div>
+    <div id="maindiv">
+        <span id="images">
+            <img src="/images/imageviewer/1.jpg" class="thumbnail" onclick="chooseImage()"/>
+            <img src="/images/imageviewer/2.jpg" class="thumbnail" onclick="chooseImage()"/>
+            <img src="/images/imageviewer/3.jpg" class="thumbnail" onclick="chooseImage()"/>
+            <img src="/images/imageviewer/4.jpg" class="thumbnail" onclick="chooseImage()"/>
+        </span>
+        <img src="/images/imageviewer/1.jpg" id="mainimage" />
+    </div>
+</body>
+</html>
